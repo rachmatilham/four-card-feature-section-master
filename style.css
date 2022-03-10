@@ -1,0 +1,167 @@
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  max-width: 100vw;
+  background-color: var(--very-light-gray);
+}
+
+main {
+  margin: 85px auto 60px;
+  width: 83vw;
+}
+
+header {
+  text-align: center;
+  color: var(--very-dark-blue);
+}
+
+header h1 {
+  font-size: 1.6em;
+  font-weight: 200;
+}
+
+header h1 span {
+  font-weight: 600;
+}
+
+header h2 {
+  margin: 15px auto;
+  font-size: 1em;
+  font-weight: 400;
+  color: var(--grayish-blue);
+  max-width: 515px;
+  line-height: 1.7;
+}
+
+article {
+  margin-top: 75px;
+}
+
+article section {
+  width: 100%;
+  height: 225px;
+  background-color: white;
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 28px;
+  padding-top: 22px;
+  position: relative;
+  box-shadow: 0 5px 20px hsla(180, 62%, 55%, 0.2);
+}
+
+article section h2 {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: var(--very-dark-blue);
+}
+
+article section h3 {
+  margin-top: 5px;
+  font-size: 0.87em;
+  font-weight: 400;
+  color: var(--grayish-blue);
+}
+
+article section img {
+  width: 60px;
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+
+article section.supervisor {
+  border-top: 5px solid var(--cyan);
+}
+
+article section.team-builder {
+  border-top: 5px solid var(--red);
+}
+
+article section.karma {
+  border-top: 5px solid var(--orange);
+}
+
+article section.calculator {
+  border-top: 5px solid var(--blue);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* RESPONSIVE DESIGN */
+@media (min-width: 992px) {
+  main {
+    margin-top: 80px;
+  }
+
+  header h1 {
+    font-size: 2.5em;
+    line-height: 1.4;
+  }
+
+  article {
+    display: grid;
+    grid-template-areas:
+      "supervisor team-builder calculator"
+      "supervisor karma calculator";
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    margin: 60px auto 0;
+    max-width: 1110px;
+  }
+
+  article section {
+    max-width: 350px;
+    margin: 0;
+    height: 250px;
+  }
+
+  article section h2 {
+    margin-top: 8px;
+  }
+
+  article section h3 {
+    margin-top: 10px;
+    line-height: 1.7;
+  }
+
+  article section.supervisor {
+    grid-area: supervisor;
+    align-self: center;
+  }
+
+  article section.team-builder {
+    grid-area: team-builder;
+  }
+
+  article section.karma {
+    grid-area: karma;
+  }
+
+  article section.calculator {
+    grid-area: calculator;
+    align-self: center;
+  }
+}
